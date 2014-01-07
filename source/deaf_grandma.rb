@@ -9,6 +9,10 @@
 # encapsulates the core Grandma logic
 def deaf_grandma
   input = gets.chomp
+  if input == ""
+    input = gets.chomp
+    return if input == ""
+  end
 
   if input.upcase.eql?(input)
     puts "NO, NOT SINCE 1983!"
