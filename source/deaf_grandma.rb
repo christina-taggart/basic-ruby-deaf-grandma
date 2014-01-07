@@ -8,6 +8,8 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
+  input = gets.chomp
+  puts input
 end
 
 # Run our method
