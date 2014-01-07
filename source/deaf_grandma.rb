@@ -8,6 +8,7 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
+  puts gets.chomp
 end
 
 # Run our method
