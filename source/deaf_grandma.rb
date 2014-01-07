@@ -8,12 +8,19 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
-  puts "input please:"
-  input = gets.chomp
-  puts input
+  puts "HI SONNY!"
+  grandchild = gets.chomp
 
+  until grandchild == "I love ya, Grandma, but I've got to go."
+    if grandchild.upcase != grandchild
+      puts "HUH?! SPEAK UP, SONNY!"
+    else
+      puts "NO, NOT SINCE 1983!"
+    end
+    grandchild = gets.chomp
+  end
 
-
+  puts "BYE SONNY!"
 end
 
 # Run our method
@@ -29,7 +36,7 @@ deaf_grandma
 4. She won't let you leave the room unless you say, politely, "I love ya, Grandma, but I've got to go." She may be deaf, but she can smell rude a mile away.
 
 
-input.upcase == input
+grandchild.upcase == grandchild
 
 | "Real" world                          | Code world    |
 | -------------                         | ------------- |
