@@ -8,6 +8,9 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
+  puts "Say hi to Grandma!"
+  response = gets
+  puts response
 end
 
 # Run our method
