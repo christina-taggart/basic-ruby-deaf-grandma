@@ -9,7 +9,18 @@
 # encapsulates the core Grandma logic
 def deaf_grandma
   input = gets.chomp
-  puts input
+
+  if input.upcase.eql?(input)
+    puts "NO, NOT SINCE 1983!"
+  else
+    puts "HUH?! SPEAK UP, SONNY!" unless input.eql?("I love ya, Grandma, but I've got to go.")
+  end
+
+  if input.eql?("I love ya, Grandma, but I've got to go.")
+    return
+  else
+    deaf_grandma
+  end
 end
 
 # Run our method
