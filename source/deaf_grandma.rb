@@ -8,18 +8,27 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
+  response = ""
   while true
+  prev_response = response
   puts "Say something to Grandma:"
-  response = gets.chomp
-    if response == "I love ya, Grandma, but I've got to go."
+  response = gets
+    if response == "\n" && prev_response == "\n"
+      return
+    end
+
+    if response.chomp == "I love ya, Grandma, but I've got to go."
       puts "OK, goodbye!"
       return
-    elsif response == response.upcase
+    elsif response.chomp == response.upcase
       puts "NO, NOT SINCE 1983!"
-    else
+    elsif response == "\n"
+      # do nothing
+    elsif
       puts "HUH?! SPEAK UP, SONNY!"
     end
   end
+
 end
 
 # Run our method
