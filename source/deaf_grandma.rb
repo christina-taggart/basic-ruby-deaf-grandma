@@ -8,7 +8,11 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
-  puts gets.chomp
+  user_input = gets.chomp
+  while user_input != "I love ya, Grandma, but I've got to go."
+    puts user_input != user_input.upcase ? "HUH?! SPEAK UP, SONNY!" : "NO, NOT SINCE 1983!"
+    user_input = gets.chomp
+  end
 end
 
 # Run our method
