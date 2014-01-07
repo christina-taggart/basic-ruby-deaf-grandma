@@ -7,7 +7,24 @@
 
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
+
+=begin
+
+=end
+
 def deaf_grandma
+  last_command = nil
+  while input = gets
+    if (last_command == "\n" and input == "\n") or input == "I love ya, Grandma, but I've got to go."
+      return
+    elsif input.chomp == input.chomp.upcase && input != "\n"
+      puts "NO, NOT SINCE 1983!"
+    elsif input != "\n"
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+    last_command = input
+  end
+
 end
 
 # Run our method
