@@ -8,17 +8,20 @@
 # You'll probably want to write other methods, but this
 # encapsulates the core Grandma logic
 def deaf_grandma
+  previous_statement = nil
   begin
   	puts "(What do you say to grandma?):"
     you_say = gets.chomp!
-    if is_magic_phrase?(you_say)
-      puts "Ok, go away then."
+    if is_magic_phrase?(you_say) || were_you_silent?(you_say, previous_statement)
+      grandmas_response = "Ok, go away then."
     elsif !is_shouting?(you_say)
-      puts "HUH?! SPEAK UP, SONNY!"
+      grandmas_response = "HUH?! SPEAK UP, SONNY!"
     elsif is_shouting?(you_say)
-      puts "NO, NOT SINCE 1983!"
+      grandmas_response = "NO, NOT SINCE 1983!"
     end
-  end until is_magic_phrase?(you_say)
+    puts grandmas_response
+    previous_statement = you_say
+  end until grandmas_response == "Ok, go away then."
 end
 
 def is_shouting?(phrase)
@@ -27,6 +30,10 @@ end
 
 def is_magic_phrase?(phrase)
   phrase == 'I love ya, Grandma, but I\'ve got to go.'
+end
+
+def were_you_silent?(phrase, previous_phrase)
+  phrase == "" && previous_phrase == ""
 end
 
 
@@ -41,3 +48,6 @@ deaf_grandma
 
 # p is_magic_phrase?("hello") == false
 # p is_magic_phrase?("I love ya, Grandma, but I've got to go.") == true
+
+# p were_you_silent?("", "") == true
+# p were_you_silent?("Hi", "") == false
